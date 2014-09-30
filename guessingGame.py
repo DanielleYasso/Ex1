@@ -9,6 +9,9 @@ def isNumber(number):
     return number
 
 name = raw_input("Hello! What's your name? ")
+if name == "":
+    print "Don't want to tell me your name?  Fine.  You are now Bob."
+    name = "Bob"
 
 print (name + ", I'm thinking of number between 1 and 100.  Guess it!")
 
@@ -16,7 +19,7 @@ gameCount = 0
 
 playAgain = True
 
-while playAgain == True:
+while playAgain:
     number = random.randint(0, 100)
     gameCount += 1
 
@@ -66,7 +69,7 @@ while playAgain == True:
     newGame = raw_input("Want to play again? y/n ")
     if newGame == "y":
         playAgain = True
-    elif newGame == "n":
+    elif newGame in ['n', 'N', 'no', "No"]:
         playAgain = False
     else:
         print "You suck.  I'm starting a new game for you anyway you ass."
